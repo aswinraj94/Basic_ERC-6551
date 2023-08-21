@@ -12,10 +12,10 @@
     ]
   },
   "files": {
-    "contracts/Wallet/Basic_Wallt.sol": {
-      "lastModificationDate": 1691251855544,
-      "contentHash": "a8faa4a1b6a89301900acfd8c7fff0b1",
-      "sourceName": "contracts/Wallet/Basic_Wallt.sol",
+    "contracts/Wallet/Basic_Wallet.sol": {
+      "lastModificationDate": 1691691685155,
+      "contentHash": "c30cc5869cbff7b61f20714353d7ea39",
+      "sourceName": "contracts/Wallet/Basic_Wallet.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -45,6 +45,7 @@
         }
       },
       "imports": [
+        "lib/forge-std/src/console.sol",
         "node_modules/@openzeppelin/contracts/access/Ownable.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
@@ -54,7 +55,7 @@
       "versionRequirement": ">=0.7.0, <0.9.0",
       "artifacts": {
         "SimpleWallet": {
-          "0.8.18+commit.87f61d96.Linux.gcc": "Basic_Wallt.sol/SimpleWallet.json"
+          "0.8.18+commit.87f61d96.Linux.gcc": "Basic_Wallet.sol/SimpleWallet.json"
         }
       }
     },
@@ -928,8 +929,8 @@
       }
     },
     "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1691162775963,
-      "contentHash": "3ae5166c6827a9cf1a7a462d1632b464",
+      "lastModificationDate": 1691686537856,
+      "contentHash": "7c5264da982f5e6f6c5a73b35b6a9230",
       "sourceName": "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
         "settings": {
@@ -960,6 +961,7 @@
         }
       },
       "imports": [
+        "lib/forge-std/src/console.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
         "node_modules/@openzeppelin/contracts/utils/Context.sol"
@@ -1148,10 +1150,10 @@
         }
       }
     },
-    "test/foundry/Contract.t.sol": {
-      "lastModificationDate": 1691323140296,
-      "contentHash": "8edf0ab6ba9d5185b2c8522fb302a393",
-      "sourceName": "test/foundry/Contract.t.sol",
+    "test/foundry/Mock/MockERC20.sol": {
+      "lastModificationDate": 1692018563294,
+      "contentHash": "fb2625d40cb9f05ef8ec4b580c25d817",
+      "sourceName": "test/foundry/Mock/MockERC20.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -1181,7 +1183,53 @@
         }
       },
       "imports": [
-        "contracts/Wallet/Basic_Wallt.sol",
+        "lib/forge-std/src/console.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <0.9.0",
+      "artifacts": {
+        "Basic_coin": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "MockERC20.sol/Basic_coin.json"
+        }
+      }
+    },
+    "test/foundry/Wallet.t.sol": {
+      "lastModificationDate": 1692022496043,
+      "contentHash": "30e4a3d091b931982e0b9e9bb746a861",
+      "sourceName": "test/foundry/Wallet.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "contracts/Wallet/Basic_Wallet.sol",
         "lib/forge-std/lib/ds-test/src/test.sol",
         "lib/forge-std/src/Base.sol",
         "lib/forge-std/src/StdAssertions.sol",
@@ -1204,12 +1252,13 @@
         "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
-        "node_modules/@openzeppelin/contracts/utils/Context.sol"
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "test/foundry/Mock/MockERC20.sol"
       ],
       "versionRequirement": "=0.8.18",
       "artifacts": {
         "test": {
-          "0.8.18+commit.87f61d96.Linux.gcc": "Contract.t.sol/test.json"
+          "0.8.18+commit.87f61d96.Linux.gcc": "Wallet.t.sol/test.json"
         }
       }
     }

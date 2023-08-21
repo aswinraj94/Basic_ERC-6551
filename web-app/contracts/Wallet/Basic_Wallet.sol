@@ -39,32 +39,27 @@ function withdraw(uint _amount) external verifyOwner{
 payable(msg.sender).transfer(_amount);
 }
 
-//To know the wallet balance
-function getWalletBalance() external view returns (uint){
-return address(this).balance;
+
+
+
+
+
+function getWalletERC20Balance() external view returns (uint){
+return ERC20_Contract.balanceOf(address(this));
 }
 
 //To know the owner balance
-function getOwnerBalance() external view returns (uint){
-return address(owner()).balance;
+function getWalletBalance() external view returns (uint){
+return address(this).balance;
 }
 
 function SetFungibleTokenAddress(address TokenAdress) public {
 ERC20_Contract =ERC20(TokenAdress);
 }
 
-    function transfer(address to, uint256 amount) public returns (bool) {
+    function transferERC20(address to, uint256 amount) public onlyOwner returns (bool) {
 
-        bool ret_val;
-
-        ret_val=ERC20_Contract.approve(to,amount);
-
-        if (ret_val == true){
-            ret_val=ERC20_Contract.transferFrom( address(this), to, amount);
-        }
-        
-
-        return ret_val;
+        return ERC20_Contract.transfer(to, amount);
     }
 
 
@@ -76,13 +71,19 @@ ERC20_Contract =ERC20(TokenAdress);
 
     }
 
-    function INcreaseallowance(address to, uint256 amount) public returns (bool) {
+    function Increaseallowance(address to, uint256 amount) public returns (bool) {
 
         bool ret_val;
 
         ret_val=ERC20_Contract.approve(to,amount);
 
         return ret_val;
+    }
+
+
+    function transferERC721(address to, uint256 amount) public onlyOwner returns (bool) {
+
+        return ERC20_Contract.transfer(to, amount);
     }
 
 
