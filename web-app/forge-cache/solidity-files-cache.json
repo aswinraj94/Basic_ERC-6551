@@ -13,8 +13,8 @@
   },
   "files": {
     "contracts/Wallet/Basic_Wallet.sol": {
-      "lastModificationDate": 1691691685155,
-      "contentHash": "c30cc5869cbff7b61f20714353d7ea39",
+      "lastModificationDate": 1692871493313,
+      "contentHash": "7dacfdb38020881a3d3da726471cdd4b",
       "sourceName": "contracts/Wallet/Basic_Wallet.sol",
       "solcConfig": {
         "settings": {
@@ -50,7 +50,17 @@
         "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
-        "node_modules/@openzeppelin/contracts/utils/Context.sol"
+        "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "node_modules/@openzeppelin/contracts/utils/Address.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol"
       ],
       "versionRequirement": ">=0.7.0, <0.9.0",
       "artifacts": {
@@ -1055,6 +1065,222 @@
         }
       }
     },
+    "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1691162776096,
+      "contentHash": "95602b04f0b53f1139f4668d123ddeb7",
+      "sourceName": "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "node_modules/@openzeppelin/contracts/utils/Address.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "ERC721": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "ERC721.sol/ERC721.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1691162776360,
+      "contentHash": "48de4c9a3a4ae5ef66a2aa620843413f",
+      "sourceName": "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "IERC721.sol/IERC721.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1691162776376,
+      "contentHash": "c22d4395e33763de693fd440c6fd10e1",
+      "sourceName": "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Receiver": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "IERC721Receiver.sol/IERC721Receiver.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1691162776370,
+      "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
+      "sourceName": "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Metadata": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "IERC721Metadata.sol/IERC721Metadata.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1691162775274,
+      "contentHash": "211ffd288c1588ba8c10eae668ca3c66",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.1",
+      "artifacts": {
+        "Address": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "Address.sol/Address.json"
+        }
+      }
+    },
     "node_modules/@openzeppelin/contracts/utils/Context.sol": {
       "lastModificationDate": 1691162775427,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
@@ -1092,6 +1318,211 @@
       "artifacts": {
         "Context": {
           "0.8.18+commit.87f61d96.Linux.gcc": "Context.sol/Context.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1691162776517,
+      "contentHash": "48686fc32a22a3754b8e63321857dd2a",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "Strings": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "Strings.sol/Strings.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1691162775873,
+      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "ERC165": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "ERC165.sol/ERC165.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1691162776289,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC165": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "IERC165.sol/IERC165.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1691162776438,
+      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "Math": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "Math.sol/Math.json"
+        }
+      }
+    },
+    "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol": {
+      "lastModificationDate": 1691162776508,
+      "contentHash": "9488ebd4daacfee8ad04811600d7d061",
+      "sourceName": "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "SignedMath": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "SignedMath.sol/SignedMath.json"
         }
       }
     },
@@ -1196,9 +1627,61 @@
         }
       }
     },
+    "test/foundry/Mock/MockERC721.sol": {
+      "lastModificationDate": 1692869658364,
+      "contentHash": "8a12e2f23cca7a7e6e62234f4c23d390",
+      "sourceName": "test/foundry/Mock/MockERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "node_modules/@openzeppelin/contracts/utils/Address.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <0.9.0",
+      "artifacts": {
+        "Basic_NFT": {
+          "0.8.18+commit.87f61d96.Linux.gcc": "MockERC721.sol/Basic_NFT.json"
+        }
+      }
+    },
     "test/foundry/Wallet.t.sol": {
-      "lastModificationDate": 1692022496043,
-      "contentHash": "30e4a3d091b931982e0b9e9bb746a861",
+      "lastModificationDate": 1692872435337,
+      "contentHash": "f528c6ccbcd8a3067ab1b2ad1ebc13f4",
       "sourceName": "test/foundry/Wallet.t.sol",
       "solcConfig": {
         "settings": {
@@ -1252,8 +1735,19 @@
         "node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "node_modules/@openzeppelin/contracts/utils/Address.sol",
         "node_modules/@openzeppelin/contracts/utils/Context.sol",
-        "test/foundry/Mock/MockERC20.sol"
+        "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol",
+        "test/foundry/Mock/MockERC20.sol",
+        "test/foundry/Mock/MockERC721.sol"
       ],
       "versionRequirement": "=0.8.18",
       "artifacts": {

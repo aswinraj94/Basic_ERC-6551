@@ -8,84 +8,58 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol"; 
 import "@openzeppelin/contracts/access/Ownable.sol"; 
 
 contract SimpleWallet is Ownable {
 
-ERC20 ERC20_Contract;
+    ERC20 ERC20_Contract;
+    ERC721 ERC721_Contract;
 
 
+    constructor() Ownable (){
+        transferOwnership(msg.sender);
+    }
 
-//The one ho calls the contract for the first time is the owner 
-constructor() Ownable ()
-{
+    receive() payable external{}
 
-}
+    function withdraw(uint _amount) external onlyOwner{
+        payable(msg.sender).transfer(_amount);
+    }
 
-//Payable function returns nothing (setter function only takes ethers as an argument and stores ethers inside the smart contract)
-//Since we need ethers to store inside of our wallet (smart contract) 
-function getEthToWallet() payable external{}
-//We could also use
-//receive() payable external{}
-
-//Verify Owner or Not
-modifier verifyOwner{
-    require(msg.sender==owner(),"Only restricted to Wallet Owner");
-    _;
-}
-
-//Transfer the amount from caller's account to this wallet (smart contract)
-function withdraw(uint _amount) external verifyOwner{
-payable(msg.sender).transfer(_amount);
-}
+    function getWalletERC20Balance() external view returns (uint){
+        return ERC20_Contract.balanceOf(address(this));
+    }
 
 
+    function getWalletBalance() external view returns (uint){
+        return address(this).balance;
+    }
 
 
+    function onERC721Received(address, address, uint256, bytes calldata) external pure returns (bytes4) {
+        return IERC721Receiver.onERC721Received.selector;
+    }
 
+    function SetFungibleTokenAddress(address TokenAdress) onlyOwner public {
+        ERC20_Contract =ERC20(TokenAdress);
+    }
 
-function getWalletERC20Balance() external view returns (uint){
-return ERC20_Contract.balanceOf(address(this));
-}
-
-//To know the owner balance
-function getWalletBalance() external view returns (uint){
-return address(this).balance;
-}
-
-function SetFungibleTokenAddress(address TokenAdress) public {
-ERC20_Contract =ERC20(TokenAdress);
-}
+    function SetNonFungibleTokenAddress(address TokenAdress) onlyOwner public {
+        ERC721_Contract =ERC721(TokenAdress);
+    }
 
     function transferERC20(address to, uint256 amount) public onlyOwner returns (bool) {
-
         return ERC20_Contract.transfer(to, amount);
     }
 
+    function transferERC721(address from, address to, uint256 tokenId, bytes memory data) public onlyOwner {
+        ERC721_Contract.safeTransferFrom(from,to, tokenId,data);
+    }
 
     function Checktotalsupply() public view returns (uint256 supply) {
-
-
         supply=ERC20_Contract.totalSupply();
-
-
     }
-
-    function Increaseallowance(address to, uint256 amount) public returns (bool) {
-
-        bool ret_val;
-
-        ret_val=ERC20_Contract.approve(to,amount);
-
-        return ret_val;
-    }
-
-
-    function transferERC721(address to, uint256 amount) public onlyOwner returns (bool) {
-
-        return ERC20_Contract.transfer(to, amount);
-    }
-
 
 
 }
